@@ -30,17 +30,17 @@
             },
             created(){
                 axios.get('list.json')
-                .then((response) => {
+                .then(function(response) {
                     // 성고하면 list 배열에 넣기
                     // data안에 객체가 있으니깐
                     // 모르겠으면 2번 링크와 2번 실행 콘솔을 비교하자
                     this.list = response.data
-                })
+                }
                 // 그냥 this를 쓰면 이 뷰에서 찾는게 아님 아마 윈도우 일거임
                 // 그걸 해결할려면 ㅇㅈㄹ해야 됨
-                .bind(this)
+                .bind(this))
                 // 실패하면 콘솔에 에러 출력
-                .catch((error) => {
+                .catch(function(error) {
                     console.log(error)
                 })
             }
