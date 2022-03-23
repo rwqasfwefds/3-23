@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- axios CDN 달기 -->
+    <!-- axios는 멀리있는 서버에서 데이터를 가져옴 -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <table>
+            <thead class="blue white-text">
+                <th>직원 번호</th>
+                <th>직원 이름</th>
+                <th>이메일</th>
+                <th></th>
+            </thead>
+            <tr v-for = 'temp in employees' :key = 'emp.id'>
+                <td>{{emp.id}}</td>
+                <td>{{emp.name}}</td>
+                <td>{{emp.email}}</td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+
+    </script>
+</body>
+</html>

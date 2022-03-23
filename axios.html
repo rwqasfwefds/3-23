@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- axios CDN 달기 -->
+    <!-- axios는 멀리있는 서버에서 데이터를 가져옴 -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <button v-on:click = 'getData'>프레임 워크 목록 가져오기</button>
+    </div>
+
+    <script>
+        new Vue({
+            el : '#app',
+            methods : {
+                getData(){
+                    // ajax : 서버에서 받아온 데이터를 표시할 때 화면 전체 갱신하지 않고 화면의 일부분만 갱신하는 기법 의 라이브러리가
+                    // get = () 안에 적혀있는 서버에 데이터 요청
+                    // 성공하면 then에 매개변수에 들어 옴
+                    // console.log에 status가 200번대면 성공, 400번대면 실패
+                    axios.get('https://raw.githubusercontent.com/joshua1988/doit-vuejs/master/data/demo.json')
+                    .then(function(response){
+                        console.log(response);
+                    });
+                }
+            }
+        });
+    </script>
+</body>
+</html>
